@@ -2,70 +2,45 @@
 
 ## CLEANER FUNCTION ##
 
-clean_exit () {
+# clean_exit () {
 
-  rm -rf $PWD/.temp/* &> /dev/null
-  rm -rf $PWD/1 &> /dev/null
-  rm -rf $PWD/2 &> /dev/null
-  clear && echo -e "\nCtrl-C caught...Performing Clean Up Thanks for Using.\n" && sleep 1s
-  echo -e "Exiting the ADB-Toolkit, Thanks for using."
-  echo -e "\nDONE"
-  exit
+#   rm -rf $PWD/.temp/* &> /dev/null
+#   rm -rf $PWD/1 &> /dev/null
+#   rm -rf $PWD/2 &> /dev/null
+#   clear && echo -e "\nCtrl-C caught...Performing Clean Up Thanks for Using.\n" && sleep 1s
+#   echo -e "Exiting the ADB-Toolkit, Thanks for using."
+#   echo -e "\nDONE"
+#   exit
 
-}
+# }
 
-trap_ctrlc () {
-    clean_exit
-}
+# trap_ctrlc () {
+#     clean_exit
+# }
 
-trap "trap_ctrlc" 2
-
-banner () {
-
-echo -e "\e[1;93m
-
- █████╗ ██████╗ ██████╗               ████████╗ ██████╗  ██████╗ ██╗     ██╗  ██╗██╗████████╗
-██╔══██╗██╔══██╗██╔══██╗              ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██║ ██╔╝██║╚══██╔══╝
-███████║██║  ██║██████╔╝    █████╗       ██║   ██║   ██║██║   ██║██║     █████╔╝ ██║   ██║
-██╔══██║██║  ██║██╔══██╗    ╚════╝       ██║   ██║   ██║██║   ██║██║     ██╔═██╗ ██║   ██║
-██║  ██║██████╔╝██████╔╝                 ██║   ╚██████╔╝╚██████╔╝███████╗██║  ██╗██║   ██║
-╚═╝  ╚═╝╚═════╝ ╚═════╝                  ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝
-
-\e[0m"
-echo
-echo -e "\e[93mMade with \e[1;91m❤️ \e[93mby \e[1;91mASHWINI SAHU\e[0m"
-}
-
+# trap "trap_ctrlc" 2
 
 option_list () {
 
-banner
-echo -e "\n\n\e[1;4;91mCHOOSE THE OPTIONS GIVEN BELOW\e[0m\n\n"
-echo -e "\e[1;93m1.   \e[1;92mSHOW CONNECTED DEVICES                           \e[1;93m24.  \e[1;92mPUT A FILE IN DEVICE "
-echo -e "\e[1;93m2.   \e[1;92mRESTART ADB SERVICE "
-echo -e "\e[1;93m3.   \e[1;92mREBOOT SYSTEM"
-echo -e "\e[1;93m4.   \e[1;92mREBOOT TO RECOVERY MODE                          \e[1;93m25.  \e[1;91mGO TO METASPLOIT SECTION "
-echo -e "\e[1;93m5.   \e[1;92mREBOOT TO FASTBOOT/BOOTLOADER MODE \n"
-echo -e "\e[1;93m6.   \e[1;92mSTART A INTERACTIVE SHELL                        \e[1;93m26.  \e[1;92mLAUNCH AN APPLICATION "
-echo -e "\e[1;93m7.   \e[1;92mDUMP SYSTEM INFORMATION (Messy)                  \e[1;93m27.  \e[1;92mCHECK IS PHONE ROOTED OR NOT "
-echo -e "\e[1;93m8.   \e[1;92mDUMP CPU INFORMATION (Messy)                     \e[1;93m28.  \e[1;92mHANG THE PHONE "
-echo -e "\e[1;93m9.   \e[1;92mDUMP MEMORY INFORMATION (Messy)                  \e[1;93m29.  \e[1;92mSEND SMS FROM THE PHONE "
-echo -e "\e[1;93m10.  \e[1;92mGET PHONE DETAILS"
-echo -e "\e[1;93m11.  \e[1;92mCAPTURE BUG REPORT"
-echo -e "\e[1;93m12.  \e[1;92mINSTALL AN PACAKAGE 'apk'"
-echo -e "\e[1;93m13.  \e[1;92mUNINSTALL AN PACKAGE"
-echo -e "\e[1;93m14.  \e[1;92mLIST ALL INSTALLED PACKAGE"
-echo -e "\e[1;93m15.  \e[1;92mSEE LIVE LOG OF DEVICE"
-echo -e "\e[1;93m16.  \e[1;92mESTABLISH A REMOTE CONNECTION WITH THE DEVICE\n"
-echo -e "\e[1;93m17.  \e[1;92mCAPTURE A SCREENSHOT ANONYMOUSLY"
-echo -e "\e[1;93m18.  \e[1;92mRECORD THE SCREEN ANONYMOUSLY"
-echo -e "\e[1;93m19.  \e[1;92mCOPY ALL THE CAMERA PHOTOS"
-echo -e "\e[1;93m20.  \e[1;92mCOPY ALL THE DOWNLOADS"
-echo -e "\e[1;93m21.  \e[1;92mCOPY ALL WHATSAPP DATA"
-echo -e "\e[1;93m22.  \e[1;92mCOPY ALL DEVICE STORAGE ( Takes time )           \e[1;93mA.  \e[1;92mABOUT AUTHOUR "
-echo -e "\e[1;93m23.  \e[1;92mCOPY A SPECIFIED FILE OR FOLDER                  \e[1;91mEXIT or press Ctrl+c\n"
+
+echo -e "\n\e[37mConnection:"
+echo -e "0.  SHOW CONNECTED DEVICES"
+echo -e "1.  ESTABLISH A REMOTE CONNECTION WITH THE DEVICE"
+
+echo -e "\nDevice:"
+echo -e "2.  COPY ALL THE CAMERA PHOTOS"
+echo -e "3.  COPY ALL THE DOWNLOADS"
+echo -e "4.  COPY ALL WHATSAPP DATA"
+echo -e "5.  COPY ALL DEVICE STORAGE ( Takes time )"
+
+echo -e "\nAuto:"
+echo -e "6.    REMOTE + CAMERA PHOTOS"
+echo -e "6.1.  REMOTE + DOWNLOADS"
+echo -e "6.2.  REMOTE + WHATSAPP DATA"
+echo -e "6.3.  REMOTE + ALL DEVICE STORAGE\e[0m"
+
 echo -e $revised
-read -p $'\e[1;4;91mSELECT ONE OF THE OPTIONS WITH THE RESPECTED NUMBER\e[0m\e[24;1;97m : ' options
+read -p $'\e[1;4;91mSELECT:\e[0m\e[24;1;97m : ' options
  
 }
 
@@ -81,39 +56,19 @@ do
 
 case $options in
 
-  "1") echo -e; bash modules/opt1;;
-  "2") echo -e; bash modules/opt2;;
-  "3") echo -e; bash modules/opt3;;
-  "4") echo -e; bash modules/opt4;;
-  "5") echo -e; bash modules/opt5;;
-  "6") echo -e; bash modules/opt6;;
-  "7") echo -e; bash modules/opt7;;
-  "8") echo -e; bash modules/opt8;;
-  "9") echo -e; bash modules/opt9;;
-  "10") echo -e; bash modules/opt10;;
-  "11") echo -e; bash modules/opt11;;
-  "12") echo -e; bash modules/opt12;;
-  "13") echo -e; bash modules/opt13;;
-  "14") echo -e; bash modules/opt14;;
-  "15") echo -e; bash modules/opt15;;
-  "16") echo -e; bash modules/opt16;;
-  "17") echo -e; bash modules/opt17;;
-  "18") echo -e; bash modules/opt18;;
-  "19") echo -e; bash modules/opt19;;
-  "20") echo -e; bash modules/opt20;;
-  "21") echo -e; bash modules/opt21;;
-  "22") echo -e; bash modules/opt22;;
-  "23") echo -e; bash modules/opt23;;
-  "24") echo -e; bash modules/opt24;;
-  "25") echo -e; bash modules/function2.sh; break;;
-  "26") echo -e; bash modules/opt26;;
-  "27") echo -e; bash modules/opt27;;
-  "28") echo -e; bash modules/opt28;;
-  "29") echo -e; bash modules/opt29;;
-  "A") echo -e; bash modules/about;;
-  "a") echo -e; bash modules/about;;
+  "0") echo -e; bash modules/opt1;; #show connected devices
+  "1") echo -e; bash modules/opt16;; # remote connection
+  "2") echo -e; bash modules/opt19;; # copy camera folder
+  "3") echo -e; bash modules/opt20;; # copy downloads folder
+  "4") echo -e; bash modules/opt21;; # copy whatsapp folder
+  "5") echo -e; bash modules/opt22;; # copy all device storage
+  
+  # "6") echo -e; bash modules/opt22;; # 
+  # "6.1") echo -e; bash modules/opt22;; # 
+  # "6.2") echo -e; bash modules/opt22;; # 
+  # "6.3") echo -e; bash modules/opt22;; # 
 
-  *) clear; revised="\e[1;4;91mENTER THE RIGHT OPTION BRO :-)\n"; option_list;;
+  *) clear; revised="\nWrong Option :-)\n"; option_list;;
 
 esac
 
@@ -121,3 +76,29 @@ done
 
 
 #### END OF THIS SCRIPT ####
+
+# 1.   SHOW CONNECTED DEVICES                           24.  PUT A FILE IN DEVICE 
+# 2.   RESTART ADB SERVICE 
+# 3.   REBOOT SYSTEM
+# 4.   REBOOT TO RECOVERY MODE                          25.  GO TO METASPLOIT SECTION 
+# 5.   REBOOT TO FASTBOOT/BOOTLOADER MODE 
+
+# 6.   START A INTERACTIVE SHELL                        26.  LAUNCH AN APPLICATION 
+# 7.   DUMP SYSTEM INFORMATION (Messy)                  27.  CHECK IS PHONE ROOTED OR NOT 
+# 8.   DUMP CPU INFORMATION (Messy)                     28.  HANG THE PHONE 
+# 9.   DUMP MEMORY INFORMATION (Messy)                  29.  SEND SMS FROM THE PHONE 
+# 10.  GET PHONE DETAILS
+# 11.  CAPTURE BUG REPORT
+# 12.  INSTALL AN PACAKAGE 'apk'
+# 13.  UNINSTALL AN PACKAGE
+# 14.  LIST ALL INSTALLED PACKAGE
+# 15.  SEE LIVE LOG OF DEVICE
+# 16.  ESTABLISH A REMOTE CONNECTION WITH THE DEVICE
+
+# 17.  CAPTURE A SCREENSHOT ANONYMOUSLY
+# 18.  RECORD THE SCREEN ANONYMOUSLY
+# 19.  COPY ALL THE CAMERA PHOTOS
+# 20.  COPY ALL THE DOWNLOADS
+# 21.  COPY ALL WHATSAPP DATA
+# 22.  COPY ALL DEVICE STORAGE ( Takes time )           A.  ABOUT AUTHOUR 
+# 23.  COPY A SPECIFIED FILE OR FOLDER                  EXIT or press Ctrl+c
